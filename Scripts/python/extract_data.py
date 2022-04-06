@@ -1,22 +1,19 @@
 from openpyxl import load_workbook
 import os
-
-# Carrega Relatorio Analitico
-wb = load_workbook("..\\..\\Data\\Template\\Template.xlsx", False)
-ws = wb.active
+from shutil import copyfile
+from datetime import datetime
+from utils import get_first_row_free
 
 # Lista dos arquivos txt
 lista_arquivos = os.listdir("..\\..\\Data\\Extratos\\Caixa\\DGI\\")
-index_excel = 1
+template = "..\\..\\Data\\Template\\Template.xlsx"
 
 for arquivo in lista_arquivos:
-    # Inicializa lista de Reclamantes
-    lista_empregados = []
 
-    inscricao_empresa = ""
+    # Inicializa variaveis
+    lista_empregados = []
     nome_empresa = ""
     cod_empresa = ""
-    uf = ""
 
     # Inicia leitura do arquivo.txt
     with open("..\\..\\Data\\Extratos\\Caixa\\DGI\\" + arquivo, "r+") as f:
@@ -30,6 +27,7 @@ for arquivo in lista_arquivos:
             if line.upper().__contains__("NOME DA EMPRESA:"):
                 if nome_empresa == "":
                     nome_empresa = line.split("NOME DA EMPRESA:")[1].strip()
+                    nome_empresa = nome_empresa.replace("/", "")
 
             # Captura: CODIGO EMPRESA
             if line.upper().__contains__("CODIGO DA EMPRESA"):
@@ -47,38 +45,50 @@ for arquivo in lista_arquivos:
                     if i2.isdigit():
                         lista_pivo.append(i2.strip())
                 lista_empregados.append(lista_pivo)
+    
+    # Verifica se o Relatório da empresa já criado
+    if nome_empresa:
+        relatorio = f"..\\..\\Data\\reports\\{nome_empresa}.xlsx"
+        if os.path.exists(relatorio):
+            index_excel = get_first_row_free(relatorio) - 1
+            wb = load_workbook(relatorio, False)
+            ws = wb.active
+        else:
+            index_excel = 1
+            wb = load_workbook(template, False)
+            ws = wb.active
 
-    # Preeche Relatório Analitico
-    if len(lista_empregados) > 0:
-        for n in range(len(lista_empregados)):
-            index_excel += 1
+        # Preeche Relatório
+        if len(lista_empregados) > 0:
+            for n in range(len(lista_empregados)):
+                index_excel += 1
 
-            # VARA
-            ws["A{}".format(index_excel)] = lista_empregados[n][8]
+                # VARA
+                ws["A{}".format(index_excel)] = lista_empregados[n][8]
 
-            # PROCESSO LOCALIZADO
-            ws["D{}".format(index_excel)] = lista_empregados[n][9]
+                # PROCESSO LOCALIZADO
+                ws["D{}".format(index_excel)] = lista_empregados[n][9]
 
-            # RECLAMANTE
-            ws["F{}".format(index_excel)] = lista_empregados[n][0]
+                # RECLAMANTE
+                ws["F{}".format(index_excel)] = lista_empregados[n][0]
 
-            # RECLAMADA
-            ws["E{}".format(index_excel)] = nome_empresa
+                # RECLAMADA
+                ws["E{}".format(index_excel)] = nome_empresa
 
-            # CODIGO EMPRESA
-            ws["AF{}".format(index_excel)] = cod_empresa
+                # CODIGO EMPRESA
+                ws["AF{}".format(index_excel)] = cod_empresa
 
-            # CODIGO EMPREGADO
-            ws["AG{}".format(index_excel)] = lista_empregados[n][1]
+                # CODIGO EMPREGADO
+                ws["AG{}".format(index_excel)] = lista_empregados[n][1]
 
-            # DATA ADMISSAO
-            ws["AH{}".format(index_excel)] = lista_empregados[n][2]
+                # DATA ADMISSAO
+                ws["AH{}".format(index_excel)] = lista_empregados[n][2]
 
-            # PIS
-            ws["AJ{}".format(index_excel)] = lista_empregados[n][3]
+                # PIS
+                ws["AJ{}".format(index_excel)] = lista_empregados[n][3]
 
-            # VALOR
-            ws["G{}".format(index_excel)] = lista_empregados[n][6]
+                # VALOR
+                ws["G{}".format(index_excel)] = lista_empregados[n][6]
 
-
-wb.save("..\\..\\Data\\RELATORIO.xlsx")
+            wb.save(relatorio)
+        wb.close()

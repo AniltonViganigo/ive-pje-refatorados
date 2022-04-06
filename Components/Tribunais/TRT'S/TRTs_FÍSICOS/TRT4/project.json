@@ -1,0 +1,57 @@
+{
+  "name": "TRT4",
+  "description": "O seguinte código realiza a consulta do status do processo físico no TRT4 e sua data de arquivamento",
+  "main": "TRT4.xaml",
+  "dependencies": {
+    "UiPath.Excel.Activities": "[2.12.2-preview]",
+    "UiPath.Mail.Activities": "[1.15.0-preview]",
+    "UiPath.System.Activities": "[22.4.0-preview]",
+    "UiPath.UIAutomation.Activities": "[22.4.0-preview]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "21.10.3.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": false
+  },
+  "expressionLanguage": "CSharp",
+  "entryPoints": [
+    {
+      "filePath": "TRT4.xaml",
+      "uniqueId": "dbff8d37-8c9d-470b-9b6d-5eed88e3a4f0",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
+}

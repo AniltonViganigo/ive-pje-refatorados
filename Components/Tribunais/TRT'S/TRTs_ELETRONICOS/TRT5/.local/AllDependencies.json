@@ -7558,11 +7558,11 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "TRT5",
-      "projectName": "TRT5",
-      "projectPath": "C:\\Users\\rafael.lima\\Documents\\UiPath\\Ive_Recursal\\Components\\Tribunais\\TRT'S\\TRTs_ELETRONICOS\\TRT5\\.local",
+      "projectUniqueName": "TRT1",
+      "projectName": "TRT1",
+      "projectPath": "C:\\Users\\rafael.lima\\Documents\\UiPath\\Ive_Recursal\\Components\\Tribunais\\TRT'S\\TRTs_ELETRONICOS\\TRT1\\.local",
       "packagesPath": "C:\\Users\\rafael.lima\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rafael.lima\\Documents\\UiPath\\Ive_Recursal\\Components\\Tribunais\\TRT'S\\TRTs_ELETRONICOS\\TRT5\\.local"
+      "outputPath": "C:\\Users\\rafael.lima\\Documents\\UiPath\\Ive_Recursal\\Components\\Tribunais\\TRT'S\\TRTs_ELETRONICOS\\TRT1\\.local"
     },
     "frameworks": {
       "net461": {

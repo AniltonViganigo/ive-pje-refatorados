@@ -1,7 +1,7 @@
 {
-  "name": "TRT12",
+  "name": "TRT1",
   "description": "Processo em Branco",
-  "main": "TRT12.xaml",
+  "main": "TRT1.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.11.4]",
     "UiPath.Mail.Activities": "[1.12.2]",
@@ -44,8 +44,8 @@
   "expressionLanguage": "CSharp",
   "entryPoints": [
     {
-      "filePath": "TRT12.xaml",
-      "uniqueId": "a14c7b6e-2549-4271-ab84-e75d20c0b21c",
+      "filePath": "TRT1.xaml",
+      "uniqueId": "fd2ce2df-5cbb-4778-b3b1-fb7effa5b9d2",
       "input": [],
       "output": []
     }
