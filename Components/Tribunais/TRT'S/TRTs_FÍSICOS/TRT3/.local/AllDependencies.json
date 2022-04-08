@@ -7554,15 +7554,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Augusto\\.nuget\\packages\\": {}
+    "C:\\Users\\rafael.lima\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "TRT3",
       "projectName": "TRT3",
-      "projectPath": "C:\\Users\\Augusto\\Documents\\UiPath\\Recursal\\TRT- FISICO\\TRT3\\.local",
-      "packagesPath": "C:\\Users\\Augusto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Augusto\\Documents\\UiPath\\Recursal\\TRT- FISICO\\TRT3\\.local"
+      "projectPath": "C:\\Users\\rafael.lima\\Documents\\UiPath\\Ive_Recursal\\Components\\Tribunais\\TRT'S\\TRTs_FÍSICOS\\TRT3\\.local",
+      "packagesPath": "C:\\Users\\rafael.lima\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rafael.lima\\Documents\\UiPath\\Ive_Recursal\\Components\\Tribunais\\TRT'S\\TRTs_FÍSICOS\\TRT3\\.local"
     },
     "frameworks": {
       "net461": {
@@ -7588,7 +7588,7 @@
             "version": "[21.10.3, 21.10.3]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Augusto\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\rafael.lima\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {

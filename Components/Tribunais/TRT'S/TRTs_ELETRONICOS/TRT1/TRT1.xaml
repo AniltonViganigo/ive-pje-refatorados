@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1004,1485</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1485</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Arquivo_Base_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="43">
@@ -1685,7 +1685,7 @@ Mes))))))))))))]</InArgument>
                                                       <av:PointCollection x:Key="ConnectorLocation">140,522 140,552 400,552 400,716.5</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Sequence DisplayName="Inserção do num. do processo" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                                  <Sequence DisplayName="Inserção do num. do processo" sap:VirtualizedContainerService.HintSize="682,1692" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                                     <Sequence.Variables>
                                                       <Variable x:TypeArguments="x:Boolean" Name="elementoEntrada" />
                                                     </Sequence.Variables>
@@ -1819,7 +1819,7 @@ Mes))))))))))))]</InArgument>
                                                         </Catch>
                                                       </TryCatch.Catches>
                                                     </TryCatch>
-                                                    <Assign sap:VirtualizedContainerService.HintSize="514,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                                    <Assign sap:VirtualizedContainerService.HintSize="640,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                                                       <Assign.To>
                                                         <OutArgument x:TypeArguments="x:Boolean">[next_step]</OutArgument>
                                                       </Assign.To>
