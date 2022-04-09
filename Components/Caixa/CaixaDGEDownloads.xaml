@@ -16,7 +16,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>921,904</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>965,904</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
@@ -136,11 +136,7 @@
         <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="548,3554" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <TryCatch.Variables>
             <Variable x:TypeArguments="x:String" Default="https://conectividade.caixa.gov.br" Name="url_conectividade" />
-            <Variable x:TypeArguments="x:Int32" Name="contador">
-              <Variable.Default>
-                <Literal x:TypeArguments="x:Int32" Value="2" />
-              </Variable.Default>
-            </Variable>
+            <Variable x:TypeArguments="x:Int32" Default="2" Name="contador" />
           </TryCatch.Variables>
           <TryCatch.Try>
             <ui:BrowserScope SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[BrowserInstance]" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe Inicio'" sap:VirtualizedContainerService.HintSize="510,3327" sap2010:WorkflowViewState.IdRef="BrowserScope_5" InformativeScreenshot="ecf1953895d4fc34fc1bfd1dc55a12d9" Selector="&lt;html title='Inicio - Acesso Restrito' /&gt;">
@@ -168,13 +164,13 @@
                         </ui:Target>
                       </ui:ExtractData.Target>
                     </ui:ExtractData>
-                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[download_dge_DT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,2394" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[download_dge_DT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,2239" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,2280" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,2125" sap2010:WorkflowViewState.IdRef="Sequence_25">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="nome_arquivo_extrato" />
                               <Variable x:TypeArguments="x:String" Name="nome_arquivo" />
@@ -411,7 +407,6 @@
                                 </ui:Target>
                               </ui:Click.Target>
                             </ui:Click>
-                            <ui:WriteCell Cell="[&quot;H&quot;+ IndexRow.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Planilha1" Text="BAIXADO" WorkbookPath="[PlanilhaInput]" />
                             <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_22">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Int32">[IndexRow]</OutArgument>
@@ -430,6 +425,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEachRow>
+                    <ui:WriteCell Cell="[&quot;H&quot;+ IndexRow.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Planilha1" Text="BAIXADO" WorkbookPath="[PlanilhaInput]" />
                     <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'IMG  imgSair'" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition Position="Center">
