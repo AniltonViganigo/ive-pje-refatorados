@@ -710,7 +710,7 @@
                               <av:PointCollection x:Key="ConnectorLocation">140,883 140,913 320,913 320,926.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="extração das partes" sap:VirtualizedContainerService.HintSize="632,2810" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <Sequence DisplayName="extração das partes" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_11">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:Boolean" Name="elementoEntrada" />
                               <Variable x:TypeArguments="x:String" Name="ReturnJS" />
@@ -941,7 +941,7 @@
                                       <av:PointCollection x:Key="ConnectorLocation">150,1063 150,1093 320,1093 320,1106.5</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence DisplayName="extração do status do processo" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                  <Sequence DisplayName="extração do status do processo" sap:VirtualizedContainerService.HintSize="1195,3285" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:Boolean" Name="elementoEntrada" />
                                       <Variable x:TypeArguments="x:String" Name="ReturnJS" />
@@ -960,9 +960,9 @@
                                         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1153,2931" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1153,2993" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                                       <TryCatch.Try>
-                                        <Sequence sap:VirtualizedContainerService.HintSize="1115,2704" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                        <Sequence sap:VirtualizedContainerService.HintSize="1115,2766" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1013,6 +1013,7 @@
                                               </ui:Target>
                                             </ui:Click.Target>
                                           </ui:Click>
+                                          <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="1073,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
                                           <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Tribunal'" sap:VirtualizedContainerService.HintSize="1073,2189" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="08b6eaa814bac8a67234d98b88f26a7b" Selector="&lt;html app='chrome.exe' title='Tribunal Regional do Trabalho da 24ª Região' /&gt;">
                                             <ui:BrowserScope.Body>
                                               <ActivityAction x:TypeArguments="x:Object">
