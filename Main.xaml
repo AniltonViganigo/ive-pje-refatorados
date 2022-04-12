@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="834,1029" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:ca="clr-namespace:CommandPrompt.Activities;assembly=WindowsCommandPromptActivities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="939,1029" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:ca="clr-namespace:CommandPrompt.Activities;assembly=WindowsCommandPromptActivities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="48">
       <x:String>System.Activities</x:String>
@@ -92,6 +92,7 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Main" sap:VirtualizedContainerService.HintSize="844,964" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -714,7 +715,7 @@
                                           <av:PointCollection x:Key="ConnectorLocation">300,769 440,769 440,806.5</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence DisplayName="Pesquisa Processos TRT" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_224">
+                                      <Sequence DisplayName="Pesquisa Processos TRT" sap:VirtualizedContainerService.HintSize="1198,3350" sap2010:WorkflowViewState.IdRef="Sequence_224">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Name="caminho_relatorio" />
                                           <Variable x:TypeArguments="sd:DataTable" Name="DT_relatorio" />
@@ -751,13 +752,13 @@
                                             </scg:List>
                                           </ui:MultipleAssign.AssignOperations>
                                         </ui:MultipleAssign>
-                                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1156,3901" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[ListFolder]">
+                                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1156,3087" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[ListFolder]">
                                           <ui:ForEach.Body>
                                             <ActivityAction x:TypeArguments="x:String">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="1120,3777" sap2010:WorkflowViewState.IdRef="Sequence_408">
+                                              <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="1120,2963" sap2010:WorkflowViewState.IdRef="Sequence_408">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="s:String[]" Name="path_relatorio_analitico" />
                                                   <Variable x:TypeArguments="x:String" Name="caminho_final" />
@@ -825,19 +826,19 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </ui:MultipleAssign>
-                                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DT_relatorio]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1078,2618" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DT_relatorio]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1078,1804" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                                                   <ui:ForEachRow.Body>
                                                     <ActivityAction x:TypeArguments="sd:DataRow">
                                                       <ActivityAction.Argument>
                                                         <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                                                       </ActivityAction.Argument>
-                                                      <Sequence sap:VirtualizedContainerService.HintSize="1044,2503" sap2010:WorkflowViewState.IdRef="Sequence_223">
+                                                      <Sequence sap:VirtualizedContainerService.HintSize="1044,1689" sap2010:WorkflowViewState.IdRef="Sequence_223">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1002,2411" sap2010:WorkflowViewState.IdRef="Sequence_222">
+                                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1002,1597" sap2010:WorkflowViewState.IdRef="Sequence_222">
                                                           <Sequence.Variables>
                                                             <Variable x:TypeArguments="x:String" Name="TRTProcesso" />
                                                             <Variable x:TypeArguments="x:String" Name="numProcesso" />
@@ -862,7 +863,7 @@
                                                               </scg:List>
                                                             </ui:MultipleAssign.AssignOperations>
                                                           </ui:MultipleAssign>
-                                                          <If Condition="[CurrentRow(23).ToString.Length &gt; 0]" sap:VirtualizedContainerService.HintSize="960,2179" sap2010:WorkflowViewState.IdRef="If_34">
+                                                          <If Condition="[CurrentRow(23).ToString.Length &gt; 0]" sap:VirtualizedContainerService.HintSize="960,1365" sap2010:WorkflowViewState.IdRef="If_34">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -888,7 +889,7 @@
                                                               </Sequence>
                                                             </If.Then>
                                                             <If.Else>
-                                                              <Sequence sap:VirtualizedContainerService.HintSize="539,2021" sap2010:WorkflowViewState.IdRef="Sequence_221">
+                                                              <Sequence sap:VirtualizedContainerService.HintSize="539,1207" sap2010:WorkflowViewState.IdRef="Sequence_221">
                                                                 <Sequence.Variables>
                                                                   <Variable x:TypeArguments="x:String" Name="DigitoProcesso" />
                                                                   <Variable x:TypeArguments="x:String" Name="AnoProcesso" />
@@ -1037,7 +1038,7 @@ CurrentRow(3).ToString))]</InArgument>
                                                                     </ui:MultipleAssign.AssignOperations>
                                                                   </ui:MultipleAssign>
                                                                 </Switch>
-                                                                <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[convert.ToInt32(TRTProcesso)]" sap:VirtualizedContainerService.HintSize="497,1458" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+                                                                <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[convert.ToInt32(TRTProcesso)]" sap:VirtualizedContainerService.HintSize="497,644" sap2010:WorkflowViewState.IdRef="Switch`1_3">
                                                                   <Switch.Default>
                                                                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_189" Level="Error" Message="[&quot;Erro ao selecionar o TRT&quot;]" />
                                                                   </Switch.Default>
@@ -1601,11 +1602,11 @@ CurrentRow(3).ToString))]</InArgument>
                                                     <OutArgument x:TypeArguments="x:String">[caminho_final]</OutArgument>
                                                   </Assign.To>
                                                   <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:String">[path_relatorio_analitico.First.ToString.Replace("string{1]{","").Replace("}","").Trim]</InArgument>
+                                                    <InArgument x:TypeArguments="x:String">[path_relatorio_analitico.First.ToString.Replace("string{1]{","").Replace("}","").replace(".xlsx","").Trim]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
                                                 <ui:MoveFile ContinueOnError="{x:Null}" Destination="C:\Users\rafael.lima\Documents\UiPath\Ive_Recursal\Data\CONCLUÍDOS" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="1078,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[caminho_final]" />
-                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_191" Level="Info" Message="[&quot;Relatório Analítico Movimentado com Sucesso!&quot;]" />
+                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1078,91" sap2010:WorkflowViewState.IdRef="LogMessage_191" Level="Info" Message="[&quot;Relatório Analítico Movimentado com Sucesso!&quot;]" />
                                               </Sequence>
                                             </ActivityAction>
                                           </ui:ForEach.Body>

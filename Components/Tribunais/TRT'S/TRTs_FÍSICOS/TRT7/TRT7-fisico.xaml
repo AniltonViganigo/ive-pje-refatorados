@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>965,1545</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>939,1545</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Arquivo_Base_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -86,7 +86,6 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="TRT7" sap:VirtualizedContainerService.HintSize="704,1480" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -1104,7 +1103,7 @@
                                                       <av:PointCollection x:Key="ConnectorLocation">140,1163 140,1193 320,1193 320,1216.5</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Sequence DisplayName="extração do status do processo" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                                  <Sequence DisplayName="extração do status do processo" sap:VirtualizedContainerService.HintSize="1153,3566" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                                     <Sequence.Variables>
                                                       <Variable x:TypeArguments="x:String" Name="ReturnJS" />
                                                       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="ProcessInfo" />
@@ -1115,7 +1114,7 @@
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1111,3376" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1111,3474" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                                                       <TryCatch.Variables>
                                                         <Variable x:TypeArguments="x:String" Name="ultimo_movimento" />
                                                       </TryCatch.Variables>
@@ -1126,13 +1125,13 @@
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                       <TryCatch.Try>
-                                                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe TRT'" sap:VirtualizedContainerService.HintSize="1073,3148" sap2010:WorkflowViewState.IdRef="BrowserScope_7" InformativeScreenshot="4f117aa85143b97efe7ada1b827b6150" Selector="&lt;html app='chrome.exe' title='TRT 7ª Região - Portal de Serviços' /&gt;">
+                                                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe TRT'" sap:VirtualizedContainerService.HintSize="1073,3247" sap2010:WorkflowViewState.IdRef="BrowserScope_7" InformativeScreenshot="4f117aa85143b97efe7ada1b827b6150" Selector="&lt;html app='chrome.exe' title='TRT 7ª Região - Portal de Serviços' /&gt;">
                                                           <ui:BrowserScope.Body>
                                                             <ActivityAction x:TypeArguments="x:Object">
                                                               <ActivityAction.Argument>
                                                                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                                               </ActivityAction.Argument>
-                                                              <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="1039,3002" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                                              <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="1039,3101" sap2010:WorkflowViewState.IdRef="Sequence_46">
                                                                 <Sequence.Variables>
                                                                   <Variable x:TypeArguments="x:String" Name="Status" />
                                                                 </Sequence.Variables>
@@ -1157,6 +1156,7 @@
                                                                     </ui:Target>
                                                                   </ui:InjectJsScript.Target>
                                                                 </ui:InjectJsScript>
+                                                                <ui:Matches sap:VirtualizedContainerService.HintSize="997,59" sap2010:WorkflowViewState.IdRef="Matches_5" Input="[ReturnJS]" IsBuilderTabModified="False" Pattern="(\d{2}[/]\d{2}[/]\d{4}).*(ARQUIVADO DEFINITIVAMENTE)" RegexOption="IgnoreCase, Compiled" Result="[ProcessInfo]" />
                                                                 <Assign sap:VirtualizedContainerService.HintSize="997,60" sap2010:WorkflowViewState.IdRef="Assign_15">
                                                                   <Assign.To>
                                                                     <OutArgument x:TypeArguments="x:String">[Status]</OutArgument>
@@ -1366,7 +1366,7 @@
                                                         </ui:BrowserScope>
                                                       </TryCatch.Try>
                                                       <TryCatch.Catches>
-                                                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="877,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                                                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1077,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1389,14 +1389,6 @@
                                                         </Catch>
                                                       </TryCatch.Catches>
                                                     </TryCatch>
-                                                    <Assign sap:VirtualizedContainerService.HintSize="911,60" sap2010:WorkflowViewState.IdRef="Assign_9">
-                                                      <Assign.To>
-                                                        <OutArgument x:TypeArguments="x:Boolean">[next_step]</OutArgument>
-                                                      </Assign.To>
-                                                      <Assign.Value>
-                                                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                      </Assign.Value>
-                                                    </Assign>
                                                   </Sequence>
                                                   <FlowStep.Next>
                                                     <FlowDecision x:Name="__ReferenceID17" Condition="[next_step=True]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
@@ -1418,7 +1410,7 @@
                                                               <av:PointCollection x:Key="ConnectorLocation">140,1293 140,1323 320,1323 320,1356.5</av:PointCollection>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <Sequence DisplayName="Extração das partes" sap:VirtualizedContainerService.HintSize="629,2967" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                                          <Sequence DisplayName="Extração das partes" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_33">
                                                             <Sequence.Variables>
                                                               <Variable x:TypeArguments="x:String" Name="ReturnJS" />
                                                               <Variable x:TypeArguments="x:String" Name="data_oficial" />
