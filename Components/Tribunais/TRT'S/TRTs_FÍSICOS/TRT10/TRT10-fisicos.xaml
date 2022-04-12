@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>939,1325</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>927,1325</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Arquivo_Base_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -90,6 +90,7 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Arquivo_Base" sap:VirtualizedContainerService.HintSize="664,1260" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -459,7 +460,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <av:Point x:Key="ShapeLocation">260.5,656.5</av:Point>
                           <av:Size x:Key="ShapeSize">79,87</av:Size>
-                          <av:PointCollection x:Key="TrueConnector">260.5,700 230.5,700 230.5,700.04 230,700.04</av:PointCollection>
+                          <av:PointCollection x:Key="TrueConnector">260.5,700 230.5,700 230.5,699.04 230,699.04</av:PointCollection>
                           <av:PointCollection x:Key="FalseConnector">339.5,700 369.5,700 369.5,820 400,820</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -643,7 +644,7 @@
                                   <av:Point x:Key="ShapeLocation">260.5,776.5</av:Point>
                                   <av:Size x:Key="ShapeSize">79,87</av:Size>
                                   <av:PointCollection x:Key="FalseConnector">339.5,820 400,820</av:PointCollection>
-                                  <av:PointCollection x:Key="TrueConnector">260.5,820 230.5,820 230.5,820.04 230,820.04</av:PointCollection>
+                                  <av:PointCollection x:Key="TrueConnector">260.5,820 230.5,820 230.5,819.04 230,819.04</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <FlowDecision.True>
@@ -798,7 +799,7 @@
                                               <av:PointCollection x:Key="ConnectorLocation">130,972.04 130,1002.04 300,1002.04 300,1016.5</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="extração das  partes" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                          <Sequence DisplayName="extração das  partes" sap:VirtualizedContainerService.HintSize="760,3891" sap2010:WorkflowViewState.IdRef="Sequence_27">
                                             <Sequence.Variables>
                                               <Variable x:TypeArguments="x:String" Name="data_oficial" />
                                             </Sequence.Variables>
@@ -818,6 +819,7 @@
                                             <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="718,3699" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                               <TryCatch.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="returnPartes" />
+                                                <Variable x:TypeArguments="s:String[]" Name="splitReclamada" />
                                               </TryCatch.Variables>
                                               <TryCatch.Try>
                                                 <Sequence sap:VirtualizedContainerService.HintSize="680,3472" sap2010:WorkflowViewState.IdRef="Sequence_26">
@@ -865,36 +867,33 @@
                                                             </ui:InjectJsScript.Target>
                                                           </ui:InjectJsScript>
                                                           <ui:Matches BuilderPattern="(?&lt;=Reclamado:)\s.*" sap:VirtualizedContainerService.HintSize="562,59" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[returnPartes]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Reclamado:)\\s.*&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exatamente&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Reclamado:)\s.*" RegexOption="IgnoreCase, Compiled" Result="[reclamadaInfo]" />
-                                                          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="562,755" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[reclamadaInfo]">
+                                                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="562,100" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                                                            <ui:MultipleAssign.AssignOperations>
+                                                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                                                                  <ui:AssignOperation.To>
+                                                                    <OutArgument x:TypeArguments="s:String[]">[splitReclamada]</OutArgument>
+                                                                  </ui:AssignOperation.To>
+                                                                  <ui:AssignOperation.Value>
+                                                                    <InArgument x:TypeArguments="s:String[]">[in_reclamada.Trim.Split(New Char(){" "c})]</InArgument>
+                                                                  </ui:AssignOperation.Value>
+                                                                </ui:AssignOperation>
+                                                              </scg:List>
+                                                            </ui:MultipleAssign.AssignOperations>
+                                                          </ui:MultipleAssign>
+                                                          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="562,615" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[reclamadaInfo]">
                                                             <ui:ForEach.Body>
                                                               <ActivityAction x:TypeArguments="x:Object">
                                                                 <ActivityAction.Argument>
                                                                   <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                                                                 </ActivityAction.Argument>
-                                                                <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="526,632" sap2010:WorkflowViewState.IdRef="Sequence_55">
-                                                                  <Sequence.Variables>
-                                                                    <Variable x:TypeArguments="s:String[]" Name="splitReclamada" />
-                                                                  </Sequence.Variables>
+                                                                <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="526,492" sap2010:WorkflowViewState.IdRef="Sequence_55">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="484,100" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
-                                                                    <ui:MultipleAssign.AssignOperations>
-                                                                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
-                                                                          <ui:AssignOperation.To>
-                                                                            <OutArgument x:TypeArguments="s:String[]">[splitReclamada]</OutArgument>
-                                                                          </ui:AssignOperation.To>
-                                                                          <ui:AssignOperation.Value>
-                                                                            <InArgument x:TypeArguments="s:String[]">[in_reclamada.Trim.Split(New Char(){" "c})]</InArgument>
-                                                                          </ui:AssignOperation.Value>
-                                                                        </ui:AssignOperation>
-                                                                      </scg:List>
-                                                                    </ui:MultipleAssign.AssignOperations>
-                                                                  </ui:MultipleAssign>
-                                                                  <If Condition="[item.ToString.ToUpper.Contains(splitReclamada(0))]" sap:VirtualizedContainerService.HintSize="484,400" sap2010:WorkflowViewState.IdRef="If_11">
+                                                                  <If Condition="[item.ToString.Contains(splitReclamada(0))]" sap:VirtualizedContainerService.HintSize="484,400" sap2010:WorkflowViewState.IdRef="If_11">
                                                                     <If.Then>
                                                                       <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_56">
                                                                         <sap:WorkflowViewStateService.ViewState>
@@ -1093,7 +1092,7 @@
                                                       <av:PointCollection x:Key="ConnectorLocation">130,1092 130,1122 300,1122 300,1136.5</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Sequence DisplayName="Extração do status do processo" sap:VirtualizedContainerService.HintSize="1195,3607" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                                  <Sequence DisplayName="Extração do status do processo" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                                     <Sequence.Variables>
                                                       <Variable x:TypeArguments="x:String" Name="UltimoAndamento" />
                                                       <Variable x:TypeArguments="x:String" Name="ultimo_movimento" />
@@ -1299,13 +1298,13 @@
                                                                             <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(ProcessInfo.First.ToString,"(\d{2}[/]\d{2}[/]\d{4})").value]</InArgument>
                                                                           </Assign.Value>
                                                                         </Assign>
-                                                                        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,669" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[in_caminho_relatorio]">
+                                                                        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,669" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" InstanceCachePeriod="3000" WorkbookPath="[in_caminho_relatorio]">
                                                                           <ui:ExcelApplicationScope.Body>
                                                                             <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                                               <ActivityAction.Argument>
                                                                                 <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                                                                               </ActivityAction.Argument>
-                                                                              <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="376,560" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                                                                              <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="376,560" sap2010:WorkflowViewState.IdRef="Sequence_64">
                                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
