@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>965,1492</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>939,1492</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Arquivo_Base_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
@@ -48,7 +48,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="58">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -79,7 +79,6 @@
       <AssemblyReference>BouncyCastle.Crypto</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Arquivo_Base" sap:VirtualizedContainerService.HintSize="678,1427" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -97,6 +96,7 @@
       <Variable x:TypeArguments="x:String" Name="UltimoMov" />
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="RegexData" />
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="RegexUltimoMov" />
+      <Variable x:TypeArguments="x:String" Name="data_oficial" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -294,7 +294,7 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" DisplayName="On Element Appear 'A'" sap:VirtualizedContainerService.HintSize="434,390" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_1" WaitVisible="True">
+                                <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" DisplayName="On Element Appear 'A'" sap:VirtualizedContainerService.HintSize="434,390" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_1" RepeatForever="False" WaitVisible="True">
                                   <ui:OnUiElementAppear.Body>
                                     <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                       <sap:WorkflowViewStateService.ViewState>
@@ -313,9 +313,6 @@
                                       </Assign>
                                     </Sequence>
                                   </ui:OnUiElementAppear.Body>
-                                  <ui:OnUiElementAppear.RepeatForever>
-                                    <Literal x:TypeArguments="x:Boolean" />
-                                  </ui:OnUiElementAppear.RepeatForever>
                                   <ui:OnUiElementAppear.Target>
                                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6a7dc55e-08b7-4b54-966c-e4d35e41cea4" InformativeScreenshot="a2d0ea70b41ae2dd72602336b41564b0" Selector="&lt;html app='chrome.exe' title='https://www.trt23.jus.br/portal/consultas_65/consulta-processos/movimentoProcDrupal.asp' /&gt;&lt;webctrl tag='A' aaname='Solved' /&gt;">
                                       <ui:Target.TimeoutMS>
@@ -399,24 +396,29 @@
                                 <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="548,2024" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="548,2319" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                               <TryCatch.Variables>
                                 <Variable x:TypeArguments="x:String" Default="0000194-10.2013.5.23.0121" Name="numeroDoProcesso" />
                               </TryCatch.Variables>
                               <TryCatch.Try>
-                                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe '" sap:VirtualizedContainerService.HintSize="510,1797" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="b722de2cb61af891503f195ff442af75" Selector="&lt;html app='chrome.exe' title='https://www.trt23.jus.br/portal/consultas_65/consulta-processos/movimentoProcDrupal.asp' /&gt;">
+                                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe '" sap:VirtualizedContainerService.HintSize="510,2092" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="b722de2cb61af891503f195ff442af75" Selector="&lt;html app='chrome.exe' title='https://www.trt23.jus.br/portal/consultas_65/consulta-processos/movimentoProcDrupal.asp' /&gt;">
                                   <ui:BrowserScope.Body>
                                     <ActivityAction x:TypeArguments="x:Object">
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                       </ActivityAction.Argument>
-                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1651" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1946" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Name="JSPartes" />
                                           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="RegexReclamado" />
                                           <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="RegexReclamante" />
                                           <Variable x:TypeArguments="x:String" Name="Reclamante" />
                                           <Variable x:TypeArguments="x:String" Name="Reclamado" />
+                                          <Variable x:TypeArguments="x:String" Name="Data_atual" />
+                                          <Variable x:TypeArguments="x:String" Name="data" />
+                                          <Variable x:TypeArguments="x:String" Name="dia" />
+                                          <Variable x:TypeArguments="x:String" Name="mes" />
+                                          <Variable x:TypeArguments="x:String" Name="ano" />
                                         </Sequence.Variables>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -471,6 +473,60 @@
                                             </scg:List>
                                           </ui:MultipleAssign.AssignOperations>
                                         </ui:MultipleAssign>
+                                        <ui:MultipleAssign DisplayName="Multiple Assign - Vira data" sap:VirtualizedContainerService.HintSize="434,255" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                                          <ui:MultipleAssign.AssignOperations>
+                                            <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                                                <ui:AssignOperation.To>
+                                                  <OutArgument x:TypeArguments="x:String">[Data_atual]</OutArgument>
+                                                </ui:AssignOperation.To>
+                                                <ui:AssignOperation.Value>
+                                                  <InArgument x:TypeArguments="x:String">[DateTime.now.ToString("dd/MM/yyyy")]</InArgument>
+                                                </ui:AssignOperation.Value>
+                                              </ui:AssignOperation>
+                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                                                <ui:AssignOperation.To>
+                                                  <OutArgument x:TypeArguments="x:String">[data]</OutArgument>
+                                                </ui:AssignOperation.To>
+                                                <ui:AssignOperation.Value>
+                                                  <InArgument x:TypeArguments="x:String">[data_atual.Replace("/","")]</InArgument>
+                                                </ui:AssignOperation.Value>
+                                              </ui:AssignOperation>
+                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                                                <ui:AssignOperation.To>
+                                                  <OutArgument x:TypeArguments="x:String">[dia]</OutArgument>
+                                                </ui:AssignOperation.To>
+                                                <ui:AssignOperation.Value>
+                                                  <InArgument x:TypeArguments="x:String">[data.Substring(0,2)]</InArgument>
+                                                </ui:AssignOperation.Value>
+                                              </ui:AssignOperation>
+                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                                                <ui:AssignOperation.To>
+                                                  <OutArgument x:TypeArguments="x:String">[mes]</OutArgument>
+                                                </ui:AssignOperation.To>
+                                                <ui:AssignOperation.Value>
+                                                  <InArgument x:TypeArguments="x:String">[data.Substring(2,2)]</InArgument>
+                                                </ui:AssignOperation.Value>
+                                              </ui:AssignOperation>
+                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                                                <ui:AssignOperation.To>
+                                                  <OutArgument x:TypeArguments="x:String">[ano]</OutArgument>
+                                                </ui:AssignOperation.To>
+                                                <ui:AssignOperation.Value>
+                                                  <InArgument x:TypeArguments="x:String">[data.Substring(4,4)]</InArgument>
+                                                </ui:AssignOperation.Value>
+                                              </ui:AssignOperation>
+                                              <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                                                <ui:AssignOperation.To>
+                                                  <OutArgument x:TypeArguments="x:String">[data_oficial]</OutArgument>
+                                                </ui:AssignOperation.To>
+                                                <ui:AssignOperation.Value>
+                                                  <InArgument x:TypeArguments="x:String">[If(Integer.parse(dia)&lt;=12, mes+"/"+dia+"/"+ano, data_atual)]</InArgument>
+                                                </ui:AssignOperation.Value>
+                                              </ui:AssignOperation>
+                                            </scg:List>
+                                          </ui:MultipleAssign.AssignOperations>
+                                        </ui:MultipleAssign>
                                         <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,923" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_caminho_relatorio]">
                                           <ui:ExcelApplicationScope.Body>
                                             <ActivityAction x:TypeArguments="ui:WorkbookApplication">
@@ -483,7 +539,7 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:ExcelWriteCell Cell="[&quot;Z&quot;+in_IndexRelatorio.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="PETICIONAR" Text="[DataPesquisa]" />
+                                                <ui:ExcelWriteCell Cell="[&quot;Z&quot;+in_IndexRelatorio.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="PETICIONAR" Text="[data_oficial]" />
                                                 <ui:ExcelWriteCell Cell="[&quot;Y&quot;+in_IndexRelatorio.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="PETICIONAR" Text="ROBÔ" />
                                                 <ui:ExcelWriteCell Cell="[&quot;F&quot;+in_IndexRelatorio.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="PETICIONAR" Text="[reclamante.Trim]" />
                                                 <ui:ExcelWriteCell Cell="[&quot;E&quot;+in_IndexRelatorio.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="PETICIONAR" Text="[reclamado.Trim]" />
@@ -557,7 +613,7 @@
                                       <av:PointCollection x:Key="ConnectorLocation">140,1113 140,1143 300,1143 300,1146.5</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence DisplayName="Extração DataAquivamento" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                  <Sequence DisplayName="Extração DataAquivamento" sap:VirtualizedContainerService.HintSize="1153,2668" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -571,21 +627,29 @@
                                         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1111,2077" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1111,2476" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                       <TryCatch.Try>
-                                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe '" sap:VirtualizedContainerService.HintSize="1073,1850" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="b722de2cb61af891503f195ff442af75" Selector="&lt;html app='chrome.exe' title='https://www.trt23.jus.br/portal/consultas_65/consulta-processos/movimentoProcDrupal.asp' /&gt;">
+                                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe '" sap:VirtualizedContainerService.HintSize="1073,2249" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="b722de2cb61af891503f195ff442af75" Selector="&lt;html app='chrome.exe' title='https://www.trt23.jus.br/portal/consultas_65/consulta-processos/movimentoProcDrupal.asp' /&gt;">
                                           <ui:BrowserScope.Body>
                                             <ActivityAction x:TypeArguments="x:Object">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1039,1704" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1039,2103" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                                <Sequence.Variables>
+                                                  <Variable x:TypeArguments="x:String" Name="data_mov" />
+                                                  <Variable x:TypeArguments="x:String" Name="data_ult_mov" />
+                                                  <Variable x:TypeArguments="x:String" Name="dia_ult_mov" />
+                                                  <Variable x:TypeArguments="x:String" Name="mes_ult_mov" />
+                                                  <Variable x:TypeArguments="x:String" Name="ano_ult_mov" />
+                                                  <Variable x:TypeArguments="x:String" Name="ultimo_movimento" />
+                                                </Sequence.Variables>
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:InjectJsScript InputParameter="{x:Null}" DisplayName="Inject Js Script" sap:VirtualizedContainerService.HintSize="997,116" sap2010:WorkflowViewState.IdRef="InjectJsScript_2" ScriptCode="function(){&#xA;&#xA;return document.getElementById('wrapperMovimentos').innerText&#xA;&#xA;&#xA;}">
+                                                <ui:InjectJsScript InputParameter="{x:Null}" DisplayName="Inject Js Script" sap:VirtualizedContainerService.HintSize="997,134" sap2010:WorkflowViewState.IdRef="InjectJsScript_2" ScriptCode="function(){&#xA;&#xA;return document.getElementById('wrapperMovimentos').innerText&#xA;&#xA;&#xA;}">
                                                   <ui:InjectJsScript.ScriptOutput>
                                                     <OutArgument x:TypeArguments="x:String">[JSPartes]</OutArgument>
                                                   </ui:InjectJsScript.ScriptOutput>
@@ -601,19 +665,84 @@
                                                   </ui:InjectJsScript.Target>
                                                 </ui:InjectJsScript>
                                                 <ui:Matches sap:VirtualizedContainerService.HintSize="997,59" sap2010:WorkflowViewState.IdRef="Matches_6" Input="[JSPartes]" IsBuilderTabModified="False" Pattern="\d{2}[/]\d{2}[/]\d{4}" RegexOption="IgnoreCase, Compiled" Result="[RegexUltimoMov]" />
-                                                <Assign sap:VirtualizedContainerService.HintSize="997,60" sap2010:WorkflowViewState.IdRef="Assign_16">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="x:String">[UltimoMov]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:String">[RegexUltimoMov.First.ToString]</InArgument>
-                                                  </Assign.Value>
-                                                </Assign>
-                                                <If Condition="[JSPartes.Contains(&quot;Baixado o processo definitivamente&quot;)]" sap:VirtualizedContainerService.HintSize="997,1157" sap2010:WorkflowViewState.IdRef="If_1">
+                                                <ui:MultipleAssign DisplayName="Multiple Assign - Vira data ultimo movimento" sap:VirtualizedContainerService.HintSize="997,286" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+                                                  <ui:MultipleAssign.AssignOperations>
+                                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                                                        <ui:AssignOperation.To>
+                                                          <OutArgument x:TypeArguments="x:String">[UltimoMov]</OutArgument>
+                                                        </ui:AssignOperation.To>
+                                                        <ui:AssignOperation.Value>
+                                                          <InArgument x:TypeArguments="x:String">[RegexUltimoMov.First.ToString]</InArgument>
+                                                        </ui:AssignOperation.Value>
+                                                      </ui:AssignOperation>
+                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                                                        <ui:AssignOperation.To>
+                                                          <OutArgument x:TypeArguments="x:String">[data_mov]</OutArgument>
+                                                        </ui:AssignOperation.To>
+                                                        <ui:AssignOperation.Value>
+                                                          <InArgument x:TypeArguments="x:String">[UltimoMov.Replace("(s)","").Trim]</InArgument>
+                                                        </ui:AssignOperation.Value>
+                                                      </ui:AssignOperation>
+                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                                                        <ui:AssignOperation.To>
+                                                          <OutArgument x:TypeArguments="x:String">[data_ult_mov]</OutArgument>
+                                                        </ui:AssignOperation.To>
+                                                        <ui:AssignOperation.Value>
+                                                          <InArgument x:TypeArguments="x:String">[data_mov.Replace("/","")]</InArgument>
+                                                        </ui:AssignOperation.Value>
+                                                      </ui:AssignOperation>
+                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+                                                        <ui:AssignOperation.To>
+                                                          <OutArgument x:TypeArguments="x:String">[dia_ult_mov]</OutArgument>
+                                                        </ui:AssignOperation.To>
+                                                        <ui:AssignOperation.Value>
+                                                          <InArgument x:TypeArguments="x:String">[if(data_ult_mov="","00", data_ult_mov.Substring(0,2))]</InArgument>
+                                                        </ui:AssignOperation.Value>
+                                                      </ui:AssignOperation>
+                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
+                                                        <ui:AssignOperation.To>
+                                                          <OutArgument x:TypeArguments="x:String">[mes_ult_mov]</OutArgument>
+                                                        </ui:AssignOperation.To>
+                                                        <ui:AssignOperation.Value>
+                                                          <InArgument x:TypeArguments="x:String">[if(data_ult_mov="","00",data_ult_mov.Substring(2,2))]</InArgument>
+                                                        </ui:AssignOperation.Value>
+                                                      </ui:AssignOperation>
+                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
+                                                        <ui:AssignOperation.To>
+                                                          <OutArgument x:TypeArguments="x:String">[ano_ult_mov]</OutArgument>
+                                                        </ui:AssignOperation.To>
+                                                        <ui:AssignOperation.Value>
+                                                          <InArgument x:TypeArguments="x:String">[if(data_ult_mov="","00",data_ult_mov.Substring(4,4))]</InArgument>
+                                                        </ui:AssignOperation.Value>
+                                                      </ui:AssignOperation>
+                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
+                                                        <ui:AssignOperation.To>
+                                                          <OutArgument x:TypeArguments="x:String">[ultimo_movimento]</OutArgument>
+                                                        </ui:AssignOperation.To>
+                                                        <ui:AssignOperation.Value>
+                                                          <InArgument x:TypeArguments="x:String">[If(Integer.parse(dia_ult_mov)&lt;=12, mes_ult_mov+"/"+dia_ult_mov+"/"+ano_ult_mov, data_mov)]</InArgument>
+                                                        </ui:AssignOperation.Value>
+                                                      </ui:AssignOperation>
+                                                    </scg:List>
+                                                  </ui:MultipleAssign.AssignOperations>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                </ui:MultipleAssign>
+                                                <If Condition="[JSPartes.Contains(&quot;Baixado o processo definitivamente&quot;)]" sap:VirtualizedContainerService.HintSize="997,1312" sap2010:WorkflowViewState.IdRef="If_1">
                                                   <If.Then>
-                                                    <Sequence sap:VirtualizedContainerService.HintSize="476,1000" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                                    <Sequence sap:VirtualizedContainerService.HintSize="476,1155" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                                       <Sequence.Variables>
                                                         <Variable x:TypeArguments="x:String" Name="Data_Arquivamento" />
+                                                        <Variable x:TypeArguments="x:String" Name="data_arq" />
+                                                        <Variable x:TypeArguments="x:String" Name="dia_arq" />
+                                                        <Variable x:TypeArguments="x:String" Name="mes_arq" />
+                                                        <Variable x:TypeArguments="x:String" Name="ano_arq" />
+                                                        <Variable x:TypeArguments="x:String" Name="Arquivamento" />
                                                       </Sequence.Variables>
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -621,10 +750,10 @@
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                       <ui:Matches sap:VirtualizedContainerService.HintSize="434,59" sap2010:WorkflowViewState.IdRef="Matches_5" Input="[JSPartes]" IsBuilderTabModified="False" Pattern="(\d{2}[/]\d{2}[/]\d{4}.*Baixado o processo definitivamente)" RegexOption="IgnoreCase, Compiled" Result="[RegexData]" />
-                                                      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="434,100" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                                                      <ui:MultipleAssign DisplayName="Multiple Assign - Vira data arquivamento" sap:VirtualizedContainerService.HintSize="434,255" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
                                                         <ui:MultipleAssign.AssignOperations>
-                                                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                                                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
                                                               <ui:AssignOperation.To>
                                                                 <OutArgument x:TypeArguments="x:String">[Data_Arquivamento]</OutArgument>
                                                               </ui:AssignOperation.To>
@@ -632,8 +761,54 @@
                                                                 <InArgument x:TypeArguments="x:String">[RegexData.Last.ToString.Substring(0,10)]</InArgument>
                                                               </ui:AssignOperation.Value>
                                                             </ui:AssignOperation>
+                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
+                                                              <ui:AssignOperation.To>
+                                                                <OutArgument x:TypeArguments="x:String">[data_arq]</OutArgument>
+                                                              </ui:AssignOperation.To>
+                                                              <ui:AssignOperation.Value>
+                                                                <InArgument x:TypeArguments="x:String">[Data_Arquivamento.Replace("/","")]</InArgument>
+                                                              </ui:AssignOperation.Value>
+                                                            </ui:AssignOperation>
+                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
+                                                              <ui:AssignOperation.To>
+                                                                <OutArgument x:TypeArguments="x:String">[dia_arq]</OutArgument>
+                                                              </ui:AssignOperation.To>
+                                                              <ui:AssignOperation.Value>
+                                                                <InArgument x:TypeArguments="x:String">[if(data_arq="","00", data_arq.Substring(0,2))]</InArgument>
+                                                              </ui:AssignOperation.Value>
+                                                            </ui:AssignOperation>
+                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
+                                                              <ui:AssignOperation.To>
+                                                                <OutArgument x:TypeArguments="x:String">[mes_arq]</OutArgument>
+                                                              </ui:AssignOperation.To>
+                                                              <ui:AssignOperation.Value>
+                                                                <InArgument x:TypeArguments="x:String">[if(data_arq="","00",data_arq.Substring(2,2))]</InArgument>
+                                                              </ui:AssignOperation.Value>
+                                                            </ui:AssignOperation>
+                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_24">
+                                                              <ui:AssignOperation.To>
+                                                                <OutArgument x:TypeArguments="x:String">[ano_arq]</OutArgument>
+                                                              </ui:AssignOperation.To>
+                                                              <ui:AssignOperation.Value>
+                                                                <InArgument x:TypeArguments="x:String">[if(data_arq="","00",data_arq.Substring(4,4))]</InArgument>
+                                                              </ui:AssignOperation.Value>
+                                                            </ui:AssignOperation>
+                                                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_25">
+                                                              <ui:AssignOperation.To>
+                                                                <OutArgument x:TypeArguments="x:String">[Arquivamento]</OutArgument>
+                                                              </ui:AssignOperation.To>
+                                                              <ui:AssignOperation.Value>
+                                                                <InArgument x:TypeArguments="x:String">[If(Integer.parse(dia_arq)&lt;=12, mes_arq+"/"+dia_arq+"/"+ano_arq, Data_Arquivamento)]</InArgument>
+                                                              </ui:AssignOperation.Value>
+                                                            </ui:AssignOperation>
                                                           </scg:List>
                                                         </ui:MultipleAssign.AssignOperations>
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
                                                       </ui:MultipleAssign>
                                                       <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,669" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[in_caminho_relatorio]">
                                                         <ui:ExcelApplicationScope.Body>
@@ -647,10 +822,10 @@
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <ui:ExcelWriteCell Cell="[&quot;AB&quot;+in_IndexRelatorio.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="PETICIONAR" Text="[Data_Arquivamento]" />
+                                                              <ui:ExcelWriteCell Cell="[&quot;AB&quot;+in_IndexRelatorio.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="PETICIONAR" Text="[Arquivamento]" />
                                                               <ui:ExcelWriteCell Cell="[&quot;AC&quot;+in_IndexRelatorio.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="PETICIONAR" Text="ARQUIVADO" />
                                                               <ui:ExcelWriteCell Cell="[&quot;X&quot;+in_IndexRelatorio.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_10" SheetName="PETICIONAR" Text="ARQUIVADO" />
-                                                              <ui:ExcelWriteCell Cell="[&quot;AA&quot;+in_IndexRelatorio.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_11" SheetName="PETICIONAR" Text="[UltimoMov]" />
+                                                              <ui:ExcelWriteCell Cell="[&quot;AA&quot;+in_IndexRelatorio.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_11" SheetName="PETICIONAR" Text="[ultimo_movimento]" />
                                                             </Sequence>
                                                           </ActivityAction>
                                                         </ui:ExcelApplicationScope.Body>
@@ -678,7 +853,7 @@
                                                               </sap:WorkflowViewStateService.ViewState>
                                                               <ui:ExcelWriteCell Cell="[&quot;AC&quot;+in_IndexRelatorio.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_12" SheetName="PETICIONAR" Text="NÃO ARQUIVADO" />
                                                               <ui:ExcelWriteCell Cell="[&quot;X&quot;+in_IndexRelatorio.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_13" SheetName="PETICIONAR" Text="ATIVO" />
-                                                              <ui:ExcelWriteCell Cell="[&quot;AA&quot;+in_IndexRelatorio.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_14" SheetName="PETICIONAR" Text="[UltimoMov]" />
+                                                              <ui:ExcelWriteCell Cell="[&quot;AA&quot;+in_IndexRelatorio.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_14" SheetName="PETICIONAR" Text="[ultimo_movimento]" />
                                                             </Sequence>
                                                           </ActivityAction>
                                                         </ui:ExcelApplicationScope.Body>
