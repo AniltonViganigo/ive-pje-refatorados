@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yEt5Q4Tk6jfPTy9f5WJwy2CGx0az3i4I6cd203SSy22XQBO2h+OtebIAIUJcCvOFVfXe3VUF9niffpe+1rmsdg==",
+  "dgSpecHash": "9iCJXA5f1gqkFNKjtVe1mb6Ql6uyjN58lnqkqICgPXpyhPXIyOy09VA33OXnESW9H9fLwAxjG7IuocYnr3ZOCg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rafael.lima\\Documents\\UiPath\\Ive_Recursal\\Components\\Tribunais\\TRT'S\\TRTs_FÍSICOS\\TRT16\\.local\\",
+  "projectFilePath": "C:\\Users\\rafael.lima\\Desktop\\recursal\\TRTS - Fisicos\\TRT16\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\rafael.lima\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",
     "C:\\Users\\rafael.lima\\.nuget\\packages\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",

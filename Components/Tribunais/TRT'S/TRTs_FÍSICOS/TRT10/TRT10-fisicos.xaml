@@ -55,7 +55,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="68">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -90,6 +90,7 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Arquivo_Base" sap:VirtualizedContainerService.HintSize="664,1260" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -1337,7 +1338,7 @@
                                                                       </scg:List>
                                                                     </ui:MultipleAssign.AssignOperations>
                                                                   </ui:MultipleAssign>
-                                                                  <If Condition="[status.Contains(&quot;Arquivado definitivamente&quot;)]" sap:VirtualizedContainerService.HintSize="997,1412" sap2010:WorkflowViewState.IdRef="If_5">
+                                                                  <If Condition="[Status.Contains(&quot;Arquivado definitivamente&quot;)]" sap:VirtualizedContainerService.HintSize="997,1412" sap2010:WorkflowViewState.IdRef="If_5">
                                                                     <If.Then>
                                                                       <Sequence sap:VirtualizedContainerService.HintSize="476,1255" sap2010:WorkflowViewState.IdRef="Sequence_31">
                                                                         <Sequence.Variables>
