@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>965,858</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>981,858</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -118,7 +118,7 @@
           <av:PointCollection x:Key="ConnectorLocation">210,620 320,620 320,656.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Download dos Extratos" sap:VirtualizedContainerService.HintSize="3152,5676" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <Sequence DisplayName="Download dos Extratos" sap:VirtualizedContainerService.HintSize="3152,5636" sap2010:WorkflowViewState.IdRef="Sequence_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -132,15 +132,15 @@
             <InArgument x:TypeArguments="x:Boolean">False</InArgument>
           </Assign.Value>
         </Assign>
-        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="3110,5484" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="3110,5444" sap2010:WorkflowViewState.IdRef="TryCatch_4">
           <TryCatch.Try>
-            <Sequence DisplayName="Extração de Dados" sap:VirtualizedContainerService.HintSize="3072,5252" sap2010:WorkflowViewState.IdRef="Sequence_27">
+            <Sequence DisplayName="Extração de Dados" sap:VirtualizedContainerService.HintSize="3072,5212" sap2010:WorkflowViewState.IdRef="Sequence_27">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'Conectivi Page'" sap:VirtualizedContainerService.HintSize="3030,5160" sap2010:WorkflowViewState.IdRef="BrowserScope_6" InformativeScreenshot="de6c7a48261b2127314d41f544546318" Selector="&lt;html title='Conectividade Social' /&gt;">
+              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'Conectivi Page'" sap:VirtualizedContainerService.HintSize="3030,5120" sap2010:WorkflowViewState.IdRef="BrowserScope_6" InformativeScreenshot="de6c7a48261b2127314d41f544546318" Selector="&lt;html title='Conectividade Social' /&gt;">
                 <ui:BrowserScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
@@ -176,7 +176,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,968" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,906" sap2010:WorkflowViewState.IdRef="Sequence_70">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -192,7 +192,6 @@
                                 <InArgument x:TypeArguments="x:Int32">[IndexRow+1]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:Break sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Break_2" />
                             <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  javascript:window.cl...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_54" KeyModifiers="None" MouseButton="BTN_LEFT">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">

@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>939,1355</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>981,1355</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Arquivo_Base_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="43">
@@ -1854,7 +1854,6 @@ Mes))))))))))))]</InArgument>
                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_reclamada">
                                                                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmpresaReclamada" />
                                                                               </InArgument>
-                                                                              <InArgument x:TypeArguments="x:String" x:Key="in_EmpresaReclamada" />
                                                                               <InArgument x:TypeArguments="x:String" x:Key="in_numero_processo">
                                                                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_num_processo" />
                                                                               </InArgument>

@@ -3,13 +3,12 @@
     <x:Property Name="in_IndexRelatorio" Type="InArgument(x:Int32)" />
     <x:Property Name="in_caminho_relatorio" Type="InArgument(x:String)" />
     <x:Property Name="in_reclamada" Type="InArgument(x:String)" />
-    <x:Property Name="in_EmpresaReclamada" Type="InArgument(x:String)" />
     <x:Property Name="in_numero_processo" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>939,1325</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>981,1325</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Arquivo_Base_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -90,7 +89,6 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Arquivo_Base" sap:VirtualizedContainerService.HintSize="664,1260" sap2010:WorkflowViewState.IdRef="Flowchart_1">
